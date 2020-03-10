@@ -1,0 +1,66 @@
+{
+  "name": "electron-app",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "customize-cra": "^0.9.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0",
+    "typescript": "~3.7.2"
+  },
+  "scripts": {
+    "start": "cross-env BROWSER=none react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "start-electron": "cross-env NODE_ENV=development electron .",
+    "start-electron-prod": "electron .",
+    "build-electron": "electron-builder"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "electron": "^8.1.1",
+    "electron-builder": "^22.3.6",
+    "react-app-rewired": "^2.1.5"
+  },
+  "homepage": ".",
+  "build": {
+    "appId": "cn.edu.cuit",
+    "productName": "react-electron",
+    "extends": null,
+    "directories": {
+      "output": "build-electron"
+    },
+    "files": [
+      "./build/**/*",
+      "./main.js",
+      "./package.json"
+    ],
+    "win": {
+      "icon": "public/favicon.ico"
+    }
+  }
+}
